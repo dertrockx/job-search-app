@@ -5,14 +5,13 @@ export const cardStyle = StyleSheet.create({
 		maxWidth: 271,
     maxHeight: 240,
 		padding: 20,
-		shadowColor: '#000',
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.25,
-    shadowRadius: 10,  
-    elevation: 3,
-    
+		elevation: 2.5,
+		marginRight: 20,
+		borderRadius: 10,
+		// borderWidth: 2,
+		// borderColor: "rgba(0,0,0, 0.3)"
 	},
-	chip: {
+	chip1: {
 		paddingTop: 3,
 		paddingBottom: 3,
 		paddingLeft: 13,
@@ -21,8 +20,36 @@ export const cardStyle = StyleSheet.create({
 		alignSelf: 'flex-start',
 		borderRadius: 50
 	},
-	chipText: {
+	chipText1: {
 		color: "rgb(35, 155, 144)",
+		fontFamily: "Nunito_300Light",
+		fontSize: 10
+	},
+	chip2: {
+		paddingTop: 3,
+		paddingBottom: 3,
+		paddingLeft: 13,
+		paddingRight: 13,
+		backgroundColor: "rgba(255, 57, 59, 0.2)",
+		alignSelf: 'flex-start',
+		borderRadius: 50
+	},
+	chipText2: {
+		color: "rgba(255, 57, 59, 1)",
+		fontFamily: "Nunito_300Light",
+		fontSize: 10
+	},
+	chip3: {
+		paddingTop: 3,
+		paddingBottom: 3,
+		paddingLeft: 13,
+		paddingRight: 13,
+		backgroundColor: "rgba(39, 140, 194, 0.2)",
+		alignSelf: 'flex-start',
+		borderRadius: 50
+	},
+	chipText3: {
+		color: "rgba(39, 140, 194,1 )",
 		fontFamily: "Nunito_300Light",
 		fontSize: 10
 	},
