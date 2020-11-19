@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { cardStyle } from "../styles/CardStyle"
 import { textStyles } from "../styles/TextStyles";
 
-const JobCard = ({ type, title, lastPosted, company }) => {
+const JobCard = ({ type, title, lastPosted, company, logoUri }) => {
 	let style = {};
 	switch( type ){
 		case "Part-Time":
@@ -25,6 +25,7 @@ const JobCard = ({ type, title, lastPosted, company }) => {
 			}
 			break;
 	}
+	const logo = { uri: logoUri }
 	return(
 		<View style={ cardStyle.card }>
 			<View style={ style.chip }>
@@ -33,7 +34,8 @@ const JobCard = ({ type, title, lastPosted, company }) => {
 			<Text style={{ ...textStyles.heading2, marginTop: 10 }}>{ title }</Text>
 			<Text style={{ ...textStyles.subtitle, marginTop: 20 }}>{ lastPosted }</Text>
 			<View style={{ ...cardStyle.bottomChip, marginTop: 40}}>
-				<View style={ cardStyle.avatar  }></View>
+				{/* <View style={ cardStyle.avatar  }></View> */}
+				<Image source={ logo } style={ cardStyle.avatar} />
 				<Text style={{ ...textStyles.subtitle, ...cardStyle.avatarText }}>{ company }</Text>
 			</View>
 		</View>

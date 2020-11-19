@@ -62,7 +62,7 @@ export const cardStyle = StyleSheet.create({
 		borderRadius: 50,
 		height: 20,
 		width: 20,
-		backgroundColor: "gray"
+		// backgroundColor: "gray"
 	},
 	avatarText: {
 		marginLeft: 10
