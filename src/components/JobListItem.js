@@ -1,17 +1,21 @@
 import React from "react";
-import { View, Text, Image} from "react-native";
+import { TouchableOpacity, Text, Image, View } from "react-native";
 import { styles } from "../styles/ScreenStyles";
 import { textStyles } from "../styles/TextStyles";
+import { useNavigation } from "@react-navigation/native";
 
 import Chip from "../components/ChipComponent";
 
-const JobListCard = ({ title, salaryPerMonth, lastPosted, company, logoUri}) => (
-		<View style={{ 
+const JobListItem = ({ title, salaryPerMonth, lastPosted, company, logoUri}) => {
+	const navigation = useNavigation();
+	return(
+		<TouchableOpacity
+			onPress={ () => navigation.navigate('Modal') }
+			style={{ 
 			flexDirection: "row",
 			maxHeight: 190,
 			paddingTop: 20,
 			paddingBottom: 20,
-
 			}}>
 			<Image 
 				style={{ width: 55, height: 55 }} 
@@ -41,7 +45,7 @@ const JobListCard = ({ title, salaryPerMonth, lastPosted, company, logoUri}) => 
 					<Text style={textStyles.paragraph}>{ lastPosted }</Text>
 				</View>
 			</View>
-		</View>
+		</TouchableOpacity>
 		)
-
-export default JobListCard;
+}
+export default JobListItem;

@@ -11,7 +11,10 @@ const HomeStack = createStackNavigator()
 
 export default function HomeStackScreen() {
 	return(
-		<HomeStack.Navigator initialRouteName="Home">
+		<HomeStack.Navigator 
+			initialRouteName="Home"
+			mode="card"
+			>
 			<HomeStack.Screen 
 				name="Home" 
 				component={HomeScreen} 

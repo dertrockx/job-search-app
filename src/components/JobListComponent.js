@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, View } from "react-native";
 import { styles } from "../styles/ScreenStyles";
-import JobCard from "./JobListCard";
+import JobListItem from "./JobListItem";
 
 
 
@@ -113,7 +113,10 @@ const JobList = (props) => {
 		<FlatList 
 			data={ Jobs }
 			renderItem={ ({ item }) => (
-				<JobCard { ...item } />
+				<JobListItem 
+					{ ...item } 
+					
+					/>
 				)}
 			ListHeaderComponent={ Header }
 			ItemSeparatorComponent={ ItemSeperator }
