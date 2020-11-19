@@ -9,6 +9,13 @@ export const styles = StyleSheet.create({
     padding: 25,
     flexGrow: 1,
     backgroundColor: "rgba(255, 255, 255, 1)"
+  },
+  sectionTitle: {
+    marginTop: 40, 
+    marginBottom: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   }
 })
 

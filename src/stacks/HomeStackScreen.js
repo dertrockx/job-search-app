@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import DetailsScreen from "../screens/DetailsScreen";
+import JobsListScreen from "../screens/JobsListScreen";
 import { Ionicons } from '@expo/vector-icons';
 
 const HomeStack = createStackNavigator()
@@ -28,6 +29,8 @@ export default function HomeStackScreen() {
 					}}
 			/>
 			<HomeStack.Screen name="Details" component={DetailsScreen} />
+			<HomeStack.Screen name="JobsList" component={JobsListScreen} />
 		</HomeStack.Navigator>
+
 		)
 }

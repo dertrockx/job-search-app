@@ -55,14 +55,35 @@ function HomeScreen({ navigation }) {
     		<Text style={{ ...textStyles.heading1, marginBottom: 20 }}>Find your Job</Text>
 	      <SearchBarComponent />
 	      
-	      <View>
-	      	<Text style={{ ...textStyles.heading2, marginTop: 40, marginBottom: 20 }}>Popular Search</Text>
+	      <View style={ styles.sectionTitle }>
+	      	
+	      	<Text style={ textStyles.heading2 }>Popular Search</Text>
+	      	<Text 
+	      		style={{
+	      			...textStyles.subtitle, 
+	      			textDecorationLine: "underline", 
+	      			textDecorationStyle: "solid", 
+	      			textDecorationColor: "rgba(0,0,0, 0.3)" 
+	      		}}
+	      	>
+	      		See All		
+	      	</Text>
 	      </View>
 	      <CustomScrollView>
 	      	{ JobCardList }
 	      </CustomScrollView>
-	      <View>
-	      	<Text style={{ ...textStyles.heading2, marginTop: 40, marginBottom: 20 }}>Categories</Text>
+	      <View style={ styles.sectionTitle }>
+	      	<Text style={ textStyles.heading2 }>Categories</Text>
+	      	<Text 
+	      		style={{
+	      			...textStyles.subtitle, 
+	      			textDecorationLine: "underline", 
+	      			textDecorationStyle: "solid", 
+	      			textDecorationColor: "rgba(0,0,0, 0.3)" 
+	      		}}
+	      	>
+	      		See All		
+	      	</Text>
 	      </View>
 	      <CustomScrollView>
 	      	<CategoryCard type="designer" />
