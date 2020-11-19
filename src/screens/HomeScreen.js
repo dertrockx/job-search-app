@@ -65,6 +65,7 @@ function HomeScreen({ navigation }) {
 	      			textDecorationStyle: "solid", 
 	      			textDecorationColor: "rgba(0,0,0, 0.3)" 
 	      		}}
+	      		onPress={ () => navigation.navigate('JobsList') }
 	      	>
 	      		See All		
 	      	</Text>

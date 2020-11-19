@@ -2,35 +2,26 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { cardStyle } from "../styles/CardStyle"
 import { textStyles } from "../styles/TextStyles";
+import Chip from "./ChipComponent";
 
 const JobCard = ({ type, title, lastPosted, company, logoUri }) => {
 	let style = {};
+	let chipType = 0;
 	switch( type ){
 		case "Part-Time":
-			style = {
-				chip: cardStyle.chip1,
-				chipText: cardStyle.chipText1
-			}
+			chipType = 1;
 			break;
 		case "Full-Time":
-			style = {
-				chip: cardStyle.chip2,
-				chipText: cardStyle.chipText2
-			}
+			chipType = 2;
 			break;
 		default:
-			style = {
-				chip: cardStyle.chip3,
-				chipText: cardStyle.chipText3
-			}
+			chipType = 3;
 			break;
 	}
 	const logo = { uri: logoUri }
 	return(
 		<View style={ cardStyle.card }>
-			<View style={ style.chip }>
-				<Text style={ style.chipText }>{ type } Job</Text>
-			</View>
+			<Chip type={ chipType } text={ `${type} Job` } />
 			<Text style={{ ...textStyles.heading2, marginTop: 10 }}>{ title }</Text>
 			<Text style={{ ...textStyles.subtitle, marginTop: 20 }}>{ lastPosted }</Text>
 			<View style={{ ...cardStyle.bottomChip, marginTop: 40}}>

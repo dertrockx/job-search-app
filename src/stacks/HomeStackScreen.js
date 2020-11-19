@@ -28,8 +28,17 @@ export default function HomeStackScreen() {
 						)
 					}}
 			/>
-			<HomeStack.Screen name="Details" component={DetailsScreen} />
-			<HomeStack.Screen name="JobsList" component={JobsListScreen} />
+			<HomeStack.Screen 
+				name="Details" 
+				component={DetailsScreen} 
+			/>
+			<HomeStack.Screen 
+				name="JobsList" 
+				component={JobsListScreen} 
+				options={{
+					title: "List of Jobs"
+					}}
+			/>
 		</HomeStack.Navigator>
 
 		)
