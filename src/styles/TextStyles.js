@@ -21,12 +21,12 @@ export const textStyles = StyleSheet.create({
 	},
 	subtitle: {
 		fontFamily: "Nunito_400Regular",
-		fontSize: 13,
+		fontSize: 15,
 		color: "rgba(0,0,0,0.3)"
 	},
 	paragraph: {
 		fontFamily: "Nunito_300Light",
-		fontSize: 10,
+		fontSize: 12,
 		lineHeight: 12.5,
 		color: "rgba(0,0,0,0.6)"
 	},

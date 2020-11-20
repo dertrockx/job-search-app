@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, Button, ScrollView } from 'react-native';
+import { Text, View, Button, ScrollView,TouchableOpacity } from 'react-native';
 import { styles } from "../styles/ScreenStyles";
 import { textStyles } from "../styles/TextStyles";
 
@@ -58,17 +58,25 @@ function HomeScreen({ navigation }) {
 	      <View style={ styles.sectionTitle }>
 	      	
 	      	<Text style={ textStyles.heading2 }>Popular Search</Text>
-	      	<Text 
+	      	<TouchableOpacity
 	      		style={{
-	      			...textStyles.subtitle, 
-	      			textDecorationLine: "underline", 
-	      			textDecorationStyle: "solid", 
-	      			textDecorationColor: "rgba(0,0,0, 0.3)" 
-	      		}}
+	      			padding: 10,
+	      			}}
 	      		onPress={ () => navigation.navigate('JobsList') }
-	      	>
-	      		See All		
-	      	</Text>
+	      		activeOpacity={0.5}
+	      		>
+	      		<Text 
+		      		style={{
+		      			...textStyles.subtitle, 
+		      			textDecorationLine: "underline", 
+		      			textDecorationStyle: "solid", 
+		      			textDecorationColor: "rgba(0,0,0, 0.3)" 
+		      		}}
+		      		
+		      	>
+		      		See All		
+		      	</Text>
+	      	</TouchableOpacity>
 	      </View>
 	      <CustomScrollView>
 	      	{ JobCardList }
