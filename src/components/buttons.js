@@ -4,7 +4,8 @@ export const defaultStyle = {
 		paddingHorizontal: 35,
 		backgroundColor: "rgba(239, 240, 249, 1)",
 		elevation: 2,
-		borderRadius: 10
+		borderRadius: 10,
+		alignItems: "center"
 	},
 	text: {
 		fontSize: 18,
@@ -48,4 +49,9 @@ export const ghostDark = {
 		...defaultStyle.text,
 		color: "rgba( 0, 0, 0, 0.4)"
 	}
+}
+
+export const blockButton = {
+	
+	width: "100%"
 }

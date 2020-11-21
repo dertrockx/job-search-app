@@ -8,6 +8,8 @@ import CustomScrollView from "../components/CustomScrollView";
 import SearchBarComponent from "../components/SearchBarComponent";
 import JobCard from "../components/JobCardComponent";
 import CategoryCard from "../components/CategoryCardComponent";
+// import { Modalize } from 'react-native-modalize';
+// import { Portal } from 'react-native-portalize';
 
 
 
@@ -48,60 +50,77 @@ function HomeScreen({ navigation }) {
 	      				company={ company }
 	      				logoUri={logoUri}
 	      			/>
-	      		)) 
-  return (
-  	<View style={ styles.wrapper }>
-    	<ScrollView contentContainerStyle={ styles.container }>
-    		<Text style={{ ...textStyles.heading1, marginBottom: 20 }}>Find your Job</Text>
-	      <SearchBarComponent />
-	      
-	      <View style={ styles.sectionTitle }>
-	      	
-	      	<Text style={ textStyles.heading2 }>Popular Search</Text>
-	      	<TouchableOpacity
-	      		style={{
-	      			padding: 10,
-	      			}}
-	      		onPress={ () => navigation.navigate('JobsList') }
-	      		activeOpacity={0.5}
-	      		>
-	      		<Text 
-		      		style={{
-		      			...textStyles.subtitle, 
-		      			textDecorationLine: "underline", 
-		      			textDecorationStyle: "solid", 
-		      			textDecorationColor: "rgba(0,0,0, 0.3)" 
-		      		}}
-		      		
-		      	>
-		      		See All		
-		      	</Text>
-	      	</TouchableOpacity>
-	      </View>
-	      <CustomScrollView>
-	      	{ JobCardList }
-	      </CustomScrollView>
-	      <View style={ styles.sectionTitle }>
-	      	<Text style={ textStyles.heading2 }>Categories</Text>
-	      	<Text 
-	      		style={{
-	      			...textStyles.subtitle, 
-	      			textDecorationLine: "underline", 
-	      			textDecorationStyle: "solid", 
-	      			textDecorationColor: "rgba(0,0,0, 0.3)" 
-	      		}}
-	      	>
-	      		See All		
-	      	</Text>
-	      </View>
-	      <CustomScrollView>
-	      	<CategoryCard type="designer" />
-	      	<CategoryCard type="developer" />
-	      	<CategoryCard type="accounting" />
-	      </CustomScrollView>
-    	</ScrollView>
-  	</View>
-  );
+				  )) 
+	// tslint-ignore
+	// const modalizeRef = React.useRef(null);
+	
+	// const onOpen = () => {
+	// 	modalizeRef.current?.open();
+	// }
+
+	return (
+		<View style={ styles.wrapper }>
+			<ScrollView contentContainerStyle={ styles.container }>
+				<Text style={{ ...textStyles.heading1, marginBottom: 20 }}>Find your Job</Text>
+			<SearchBarComponent />
+			{/* <Button 
+				onPress={onOpen}
+				title="Open Modal"
+			/> */}
+			{/* <Portal>
+				<Modalize ref={modalizeRef}>
+					<Text style={ textStyles.heaing1 }>
+						This is a modal!
+					</Text>
+				</Modalize>
+			</Portal> */}
+			<View style={ styles.sectionTitle }>
+				
+				<Text style={ textStyles.heading2 }>Popular Search</Text>
+				<TouchableOpacity
+					style={{
+						padding: 10,
+						}}
+					onPress={ () => navigation.navigate('JobsList') }
+					activeOpacity={0.5}
+					>
+					<Text 
+						style={{
+							...textStyles.subtitle, 
+							textDecorationLine: "underline", 
+							textDecorationStyle: "solid", 
+							textDecorationColor: "rgba(0,0,0, 0.3)" 
+						}}
+						
+					>
+						See All		
+					</Text>
+				</TouchableOpacity>
+			</View>
+			<CustomScrollView>
+				{ JobCardList }
+			</CustomScrollView>
+			<View style={ styles.sectionTitle }>
+				<Text style={ textStyles.heading2 }>Categories</Text>
+				<Text 
+					style={{
+						...textStyles.subtitle, 
+						textDecorationLine: "underline", 
+						textDecorationStyle: "solid", 
+						textDecorationColor: "rgba(0,0,0, 0.3)" 
+					}}
+				>
+					See All		
+				</Text>
+			</View>
+			<CustomScrollView>
+				<CategoryCard type="designer" />
+				<CategoryCard type="developer" />
+				<CategoryCard type="accounting" />
+			</CustomScrollView>
+			</ScrollView>
+		</View>
+	);
 }
 
 

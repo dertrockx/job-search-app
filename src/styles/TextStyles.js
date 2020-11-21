@@ -27,7 +27,7 @@ export const textStyles = StyleSheet.create({
 	paragraph: {
 		fontFamily: "Nunito_300Light",
 		fontSize: 12,
-		lineHeight: 12.5,
+		lineHeight: 15,
 		color: "rgba(0,0,0,0.6)"
 	},
 	

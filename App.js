@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
+
+
 
 // fonts loading
 import { AppLoading } from "expo";
@@ -12,8 +12,7 @@ import { useFonts,
 import { Nunito_400Regular, Nunito_300Light } from "@expo-google-fonts/nunito";
 import RootStack from "./src/stacks/RootStack";
 
-
-const Tab = createBottomTabNavigator();
+import { Host } from 'react-native-portalize'
 
 
 
@@ -26,10 +25,12 @@ export default function App() {
   })
   if (!fontsLoaded){
     return <AppLoading />;
-  } else 
+  } else
     return (
       <NavigationContainer>
-        <RootStack />
+        <Host>
+          <RootStack />
+        </Host>
       </NavigationContainer>
     );
 }

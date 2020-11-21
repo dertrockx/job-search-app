@@ -1,15 +1,17 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
-import { ghostDark, primary } from "./buttons";
+import { ghostDark, primary, blockButton } from "./buttons";
+import PropTypes from 'prop-types'
 
 const buttonStyles = StyleSheet.create({
 	ghostDark: { ...ghostDark.button },
 	ghostDarkText: { ...ghostDark.text },
 	primary: { ...primary.button },
-	primaryText:{ ...primary.text }
+	primaryText:{ ...primary.text },
+	blockButton: { ...blockButton }
 })
 
-const CustomButton = ({ onPress, title, type }) => {
+const CustomButton = ({ onPress, title, type, block }) => {
 	let chosenStyle = {
 		btn: null,
 		text: null
@@ -31,7 +33,7 @@ const CustomButton = ({ onPress, title, type }) => {
 	return(
 		<TouchableOpacity
 			onPress={ onPress }
-			style={ chosenStyle.btn }
+			style={ chosenStyle.btn  }
 			>
 			<Text
 				style={ chosenStyle.text }
@@ -47,7 +49,15 @@ const CustomButton = ({ onPress, title, type }) => {
 CustomButton.defaultProps = {
 	title: "Button",
 	onPress: () => alert("Button pressed!"),
-	type: "ghost dark"
+	type: "ghost dark",
+	block: false
 }
 
+
+CustomButton.propTypes = {
+	block: PropTypes.bool,
+	title: PropTypes.string,
+	type: PropTypes.string,
+	onPress: PropTypes.func
+}
 export default CustomButton;
